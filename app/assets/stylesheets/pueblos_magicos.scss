@@ -1,0 +1,33 @@
+// Place all the styles related to the PueblosMagicos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div#card-magictown{
+	float: left;
+	width: 325px;
+	height: 450px;
+	border-radius: 8px;
+	margin: 70px;
+	box-shadow: 0 2px rgba(0,0,0,0.2);
+	overflow: hidden;
+	transition: all 0.25s;
+}
+
+div#card-magictown:hover{
+	transform:  translateY(-15px);
+	box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+
+div#card-magictown img{
+	width: 325px;
+	height: 220px;
+}
+
+div#card-magictown h4{
+	font-weight: 600;
+}
+
+footer div{
+	background: black;
+}

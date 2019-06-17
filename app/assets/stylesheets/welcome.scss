@@ -1,0 +1,87 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	margin: 0 !important;
+}
+
+div#general{
+	margin: auto;
+	margin-top: 40px;
+	width: 1000px;
+	height: 1470px;
+}
+
+div#info{
+	float: right;
+	width: 300px;
+	height: 360px;
+	background-color: #E8E8E8;
+	border-radius: 8px;
+}
+
+div#info h4{
+	color: black;
+	margin-top: 10px;
+}
+
+
+div#info p{
+	color: black;
+	margin-top: 5px;
+	margin: 8px;
+}
+
+div#info li{
+	color: black;
+	margin-top: 5px;
+	margin: 15px;
+}
+
+div#slider{
+	width: 685px;
+	overflow: hidden;
+}
+
+div#slider ul{
+	display: flex;
+	padding: 0;
+	width: 400%;
+
+	animation:	cambio 20s infinite;
+	animation-direction: alternate;
+}
+
+div#slider li {
+	width: 100%;
+	list-style: none;
+}
+
+div#slider img{
+	width: 100%;
+}
+
+@keyframes cambio{
+	0%{margin-left: 0;}
+	20%{ margin-left: 0; }
+
+	25%{margin-left: -100%;}
+	45%{margin-left: -100%;}
+
+
+	50%{margin-left: -200%;}
+	70%{margin-left: -200%;}
+
+
+	75%{margin-left: -300%;}
+	100%{margin-left: -300%;}
+}
+
+footer div{
+	background: black;
+}

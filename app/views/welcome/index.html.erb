@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= image_tag "nayarit.png", size: "50x50" %>
+  <%= link_to "DemoConoceNayarit", root_path, class:"navbar-brand"%>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Pueblos Magicos", pueblos_magicos_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div id="general">
+	<div id="info">
+		<center><h4>Conoce Nayarti</h4></center>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim laborum.
+		</p>
+		<li><%= link_to "Pueblo Magicos",pueblos_magicos_path%></li>
+		<li>Areas Verdes</li>
+		<li>Playas Virguenes</li>
+		
+	</div>
+
+	<div id="slider">
+		<ul>
+			<li><%= image_tag "rivie.jpg"%></li>
+			<li><%= image_tag "sayu.jpg"%></li>
+			<li><%= image_tag "nay.jpg"%></li>
+			<li><%= image_tag "islas.jpg"%></li>
+		</ul>
+	</div>
+
+	<div id="contenedor">
+		<div id="card">
+			<%= image_tag "viajeros.jpg"%>
+			<center><h4>Sitios de Interes</h4></center>
+		</div>
+
+		<div id="card">
+			<%= image_tag "eventos.jpg"%>
+			<h4><center>Eventos</center></h4>
+				<center>
+					<li>
+						<a href="/events/1">Fiestas Patronales</a>  
+					</li>
+					<li>
+						<a href="/events/2">Festival del Viento</a>  
+					</li> 
+				</center>
+				
+		</div>
+
+		<div id="card">
+			<%= image_tag "aventura.jpg"%>
+			<center><h4>Rutas Turisticas</h4></center>
+		</div>
+		
+	</div>
+
+    <div id="map" class="form-group"></div>   
+</div>
+<footer>
+	<div>
+    	<center><%= image_tag "nayarit.png", size:"140x140" %></center>
+	</div> 
+</footer>
+
+
+<script>
+  map = L.map('map').setView([21.743888888889,-105.22833333333],8.5);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+   
+</script>

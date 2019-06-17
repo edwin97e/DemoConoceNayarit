@@ -1,0 +1,30 @@
+div#contenedor{
+	margin-top: 0px;
+	width: 1000px;
+	height: 580px;
+}
+
+div#card{
+	float: left;
+	width: 325px;
+	height: 450px;
+	border-radius: 8px;
+	margin: 4px;
+	box-shadow: 0 2px rgba(0,0,0,0.2);
+	overflow: hidden;
+	transition: all 0.25s;
+}
+
+div#card:hover{
+	transform:  translateY(-15px);
+	box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+
+div#card img{
+	width: 325px;
+	height: 220px;
+}
+
+div#card h4{
+	font-weight: 600;
+}

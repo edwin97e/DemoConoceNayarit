@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Magictowns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @magictowns.each do |magictown| %>
+      <tr>
+        <td><%= magictown.title %></td>
+        <td><%= link_to 'Show', magictown %></td>
+        <td><%= link_to 'Edit', edit_magictown_path(magictown) %></td>
+        <td><%= link_to 'Destroy', magictown, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Magictown', new_magictown_path %>

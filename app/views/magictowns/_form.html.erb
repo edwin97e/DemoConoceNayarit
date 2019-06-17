@@ -1,0 +1,74 @@
+<%= form_for @magictown, html: { multipart: true } do |form| %>
+  <% if magictown.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(magictown.errors.count, "error") %> prohibited this magictown from being saved:</h2>
+
+      <ul>
+      <% magictown.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.cktext_area :body %>
+  </div>
+  
+  <div id="map" style="height: 500px; width: 1000px;" class="form-group"></div>
+  
+  <h5>latitud:</h5>
+    <p id="latitud"></p>
+      
+  <h5>longitud:</h5>
+    <p id="longitud"></p>
+      
+  <div>
+    <%= form.hidden_field :latitude %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imagen %>
+    <%= form.file_field :img %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<script>
+  map = L.map('map').setView([21.743888888889,-105.22833333333],8.5);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  popup = L.popup();
+  
+  function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("Agregar este Sitio")
+        .openOn(map);
+  var x = e.latlng.lat.toString();
+  var y = e.latlng.lng.toString();
+  document.getElementById('magictown_latitude').value = x;
+  document.getElementById('magictown_longitude').value = y;
+  document.getElementById('latitud').innerHTML= x;
+  document.getElementById('longitud').innerHTML= y;    
+  }
+  map.on('click', onMapClick);
+   
+</script>

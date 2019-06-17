@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= image_tag "nayarit.png", size: "50x50" %>
+  <%= link_to "DemoConoceNayarit", root_path, class:"navbar-brand"%>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1><%= @magictown.title %></h1>
+
+<p>
+  <strong>Body:</strong>
+  <%= raw @magictown.body %>
+</p>
+
+  <h1 id= "latitude" style="display: none"><%= @magictown.latitude %></h1>
+
+  <h1 id= "longitude" style="display: none"><%= @magictown.longitude%></h1>
+
+  <div id="mapid" style="height: 500px; width: 1000px;"></div>
+
+<footer>
+  <div>
+      <center><%= image_tag "nayarit.png", size:"140x140" %></center>
+  </div> 
+</footer>
+
+<script>
+  name = document.getElementsByTagName("h1")[0].innerHTML;
+  lati = document.getElementsByTagName("h1")[1].innerHTML;
+  long = document.getElementsByTagName("h1")[2].innerHTML;
+
+  mymap = L.map('mapid').setView([lati,long],14);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
+    
+
+  marker = L.marker([lati, long]).addTo(mymap);
+  marker.bindPopup(name).openPopup();
+
+</script>
+</br>
+
